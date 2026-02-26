@@ -89,12 +89,15 @@ if(!isset($_SESSION["user"])) {
             <span>Buku</span>
           </a>
         </li>
+
+        <?php if($_SESSION['user']['level'] == 'peminjam'): ?>
         <li class="nav-item">
-          <a class="nav-link collapsed" href="?page=ulasan" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <a class="nav-link collapsed" href="index.php?page=ulasan">
             <i class="fa-solid fa-star"></i>
             <span>Ulasan</span>
           </a>
         </li>
+        <?php endif; ?>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block" />
@@ -252,8 +255,8 @@ if(!isset($_SESSION["user"])) {
               <!-- Nav Item - User Information -->
               <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Farisul Fahmi</span>
-                  <img class="img-profile rounded-circle" src="img/b.png" />
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= $_SESSION['user']['nama']; ?></span>
+                  <img class="img-profile rounded-circle" src="img/yusuf.jpg" />
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
